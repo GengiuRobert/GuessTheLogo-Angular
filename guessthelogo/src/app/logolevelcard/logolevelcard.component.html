@@ -5,7 +5,7 @@
         }@else{
         <p>Loading...</p>
         }
-        <input type="text" placeholder="Enter your answer" class="answer-input" />
-        <button class="check-button">Check Answer</button>
+        <input type="text" placeholder="Enter your answer" name="logo-name" class="answer-input"  [(NgModel)] = "enteredLogoName"/>
+        <button (click)="onCheckAnswer()" class="check-button">Check Answer</button>
     </div>
 </div>

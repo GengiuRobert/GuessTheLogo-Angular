@@ -1,23 +1,42 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, signal } from '@angular/core';
 import { LogoService } from '../../services/logos.service';
-import { CommonModule } from '@angular/common';
+import { AnswerService } from '../../services/answer.service';
+import type { Logo } from '../../models/logo.model';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-logolevelcard',
-  imports: [CommonModule],
+  imports: [FormsModule],
   templateUrl: './logolevelcard.component.html',
   styleUrl: './logolevelcard.component.css'
 })
 export class LogolevelcardComponent implements OnInit {
 
   srcOfRandomLogo: String | undefined;
+  currentLogo: Logo | undefined;
+  enteredLogoName = signal('');
 
-  constructor(private logoService: LogoService) { }
+  constructor(
+    private logoService: LogoService,
+    private checkAnswearService: AnswerService
+  ) { }
 
   ngOnInit(): void {
-    let randomLogo = this.logoService.getRandomLogo();
-    this.srcOfRandomLogo = randomLogo.imageSrc;
+    this.currentLogo = this.logoService.getRandomLogo();
+    this.srcOfRandomLogo = this.currentLogo.imageSrc;
   }
+
+  onCheckAnswer() : void {
+    let isCorrectAnswer = this.checkAnswearService.onInputCheckAnswer(this.enteredLogoName(), this.currentLogo!);
+    if (isCorrectAnswer) {
+      console.log("Correct");
+    }
+    else {
+      console.log("Wrong");
+    }
+  }
+
+
 
 
 }
