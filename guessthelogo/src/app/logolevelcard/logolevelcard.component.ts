@@ -6,9 +6,10 @@ import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-logolevelcard',
+  standalone: true,
   imports: [FormsModule],
   templateUrl: './logolevelcard.component.html',
-  styleUrl: './logolevelcard.component.css'
+  styleUrls: ['./logolevelcard.component.css']
 })
 export class LogolevelcardComponent implements OnInit {
 
@@ -26,10 +27,17 @@ export class LogolevelcardComponent implements OnInit {
     this.srcOfRandomLogo = this.currentLogo.imageSrc;
   }
 
-  onCheckAnswer() : void {
+  loadNewLogo(): void {
+    this.currentLogo = this.logoService.getRandomLogo();
+    this.srcOfRandomLogo = this.currentLogo.imageSrc;
+    this.enteredLogoName.set('');
+  }
+
+  onCheckAnswer(): void {
     let isCorrectAnswer = this.checkAnswearService.onInputCheckAnswer(this.enteredLogoName(), this.currentLogo!);
     if (isCorrectAnswer) {
       console.log("Correct");
+      this.loadNewLogo();
     }
     else {
       console.log("Wrong");
