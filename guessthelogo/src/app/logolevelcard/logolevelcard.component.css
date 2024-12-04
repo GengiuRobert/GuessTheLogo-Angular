@@ -1,0 +1,67 @@
+.card-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .card {
+    background: linear-gradient(145deg, #d9a66b, #e0b485); 
+    border-radius: 15px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); 
+    padding: 20px;
+    text-align: center;
+    max-width: 400px;
+    width: 90%;
+  }
+  
+  .logo-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+    margin-bottom: 20px;
+  }
+  
+  .answer-input {
+    width: 90%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 2px solid #e9d8c6; 
+    border-radius: 8px;
+    font-size: 1rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+  }
+  
+  .check-button {
+    padding: 12px 24px;
+    background-color: #7b4a1c; 
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); 
+  }
+  
+  .check-button:hover {
+    background-color: #5c3413; 
+    transform: scale(1.1);
+  }
+  
+  @media (max-width: 768px) {
+    .card {
+      max-width: 90%;
+      padding: 15px;
+    }
+  
+    .check-button {
+      font-size: 1rem;
+      padding: 10px 20px;
+    }
+  }
+  
