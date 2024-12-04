@@ -3,11 +3,13 @@ import { LogoService } from '../../services/logos.service';
 import { AnswerService } from '../../services/answer.service';
 import type { Logo } from '../../models/logo.model';
 import { FormsModule } from '@angular/forms';
+import { ScoreboardComponent } from "../scoreboard/scoreboard.component";
+import { ScoreService } from '../../services/score.service';
 
 @Component({
   selector: 'app-logolevelcard',
   standalone: true,
-  imports: [FormsModule],
+  imports: [FormsModule, ScoreboardComponent],
   templateUrl: './logolevelcard.component.html',
   styleUrls: ['./logolevelcard.component.css']
 })
@@ -19,7 +21,8 @@ export class LogolevelcardComponent implements OnInit {
 
   constructor(
     private logoService: LogoService,
-    private checkAnswearService: AnswerService
+    private checkAnswearService: AnswerService,
+    private scoreService: ScoreService
   ) { }
 
   ngOnInit(): void {
@@ -36,7 +39,7 @@ export class LogolevelcardComponent implements OnInit {
   onCheckAnswer(): void {
     let isCorrectAnswer = this.checkAnswearService.onInputCheckAnswer(this.enteredLogoName(), this.currentLogo!);
     if (isCorrectAnswer) {
-      console.log("Correct");
+      this.scoreService.incrementScore();
       this.loadNewLogo();
     }
     else {
