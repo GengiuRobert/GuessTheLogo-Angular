@@ -17,6 +17,8 @@ export class LogolevelcardComponent implements OnInit {
 
   srcOfRandomLogo: String | undefined;
   currentLogo: Logo | undefined;
+  isCorrectAnswer = signal<boolean | null>(null);
+  currentMessage = signal('');
   enteredLogoName = signal('');
 
   constructor(
@@ -26,8 +28,7 @@ export class LogolevelcardComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.currentLogo = this.logoService.getRandomLogo();
-    this.srcOfRandomLogo = this.currentLogo.imageSrc;
+    this.loadNewLogo();
   }
 
   loadNewLogo(): void {
@@ -37,14 +38,12 @@ export class LogolevelcardComponent implements OnInit {
   }
 
   onCheckAnswer(): void {
-    let isCorrectAnswer = this.checkAnswearService.onInputCheckAnswer(this.enteredLogoName(), this.currentLogo!);
-    if (isCorrectAnswer) {
+    this.isCorrectAnswer.set(this.checkAnswearService.onInputCheckAnswer(this.enteredLogoName(), this.currentLogo!));
+    if (this.isCorrectAnswer()) {
       this.scoreService.incrementScore();
       this.loadNewLogo();
     }
-    else {
-      console.log("Wrong");
-    }
+
   }
 
 

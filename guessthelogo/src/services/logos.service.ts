@@ -8,7 +8,6 @@ export class LogoService {
     logosImported = logos;
 
     getRandomLogo(): Logo {
-
         let generateRandomIndex = Math.floor(Math.random() * this.logosImported.length);
         return this.logosImported[generateRandomIndex];
     }

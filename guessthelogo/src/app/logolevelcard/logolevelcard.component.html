@@ -5,8 +5,16 @@
         }@else{
         <p>Loading...</p>
         }
-        <app-scoreboard/>
-        <input type="text" placeholder="Enter your answer" id="logo-name" class="answer-input" [(ngModel)]="enteredLogoName"  />
+        <app-scoreboard />
+        <input type="text" placeholder="Enter your answer" id="logo-name" class="answer-input"
+            [(ngModel)]="enteredLogoName" />
         <button (click)="onCheckAnswer()" class="check-button">Check Answer</button>
+        @if(isCorrectAnswer() === true){
+        <p class="correct-message">Congratulations! Your answer is correct! 🎉</p>
+        }@else if(isCorrectAnswer() === false){
+        <p class="incorrect-message">Bad Luck! Your answer is incorrect! ☹️</p>
+        }@else{
+        <p class="null-message">Take a guess! 😉</p>
+        }
     </div>
 </div>
