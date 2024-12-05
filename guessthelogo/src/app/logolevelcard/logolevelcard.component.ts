@@ -1,52 +1,64 @@
 import { Component, OnInit, signal } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+import { Router } from '@angular/router';
+
+import { ScoreboardComponent } from '../scoreboard/scoreboard.component';
+
+import type { Logo } from '../../models/logo.model';
+
 import { LogoService } from '../../services/logos.service';
 import { AnswerService } from '../../services/answer.service';
-import type { Logo } from '../../models/logo.model';
-import { FormsModule } from '@angular/forms';
-import { ScoreboardComponent } from "../scoreboard/scoreboard.component";
 import { ScoreService } from '../../services/score.service';
+
 
 @Component({
   selector: 'app-logolevelcard',
   standalone: true,
-  imports: [FormsModule, ScoreboardComponent],
+  imports: [FormsModule,ScoreboardComponent],
   templateUrl: './logolevelcard.component.html',
   styleUrls: ['./logolevelcard.component.css']
 })
 export class LogolevelcardComponent implements OnInit {
-
+  allLogos: Logo[] = [];
   srcOfRandomLogo: String | undefined;
-  currentLogo: Logo | undefined;
+  currentLogo: Logo | null = null;
   isCorrectAnswer = signal<boolean | null>(null);
+  isAllGuessed = signal<boolean>(false);
   currentMessage = signal('');
   enteredLogoName = signal('');
 
   constructor(
     private logoService: LogoService,
     private checkAnswearService: AnswerService,
-    private scoreService: ScoreService
+    private scoreService: ScoreService,
+    private router: Router
   ) { }
 
   ngOnInit(): void {
+    this.allLogos = this.logoService.getAllLogos();
     this.loadNewLogo();
   }
 
   loadNewLogo(): void {
+
     this.currentLogo = this.logoService.getRandomLogo();
-    this.srcOfRandomLogo = this.currentLogo.imageSrc;
+
+    if (this.currentLogo === null) {
+      this.isAllGuessed.set(true);
+      this.router.navigate(['/gamewon']);
+      return;
+    }
+    this.srcOfRandomLogo = this.currentLogo!.imageSrc;
     this.enteredLogoName.set('');
+    this.isCorrectAnswer.set(null);
   }
 
   onCheckAnswer(): void {
     this.isCorrectAnswer.set(this.checkAnswearService.onInputCheckAnswer(this.enteredLogoName(), this.currentLogo!));
     if (this.isCorrectAnswer()) {
-      this.scoreService.incrementScore();
-      this.loadNewLogo();
+      this.logoService.removeGuessedLogo(this.currentLogo!);
+      setTimeout(() => { this.scoreService.incrementScore(); this.loadNewLogo() }, 1000);
     }
-
   }
-
-
-
 
 }

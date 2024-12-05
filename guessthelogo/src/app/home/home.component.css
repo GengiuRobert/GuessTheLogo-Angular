@@ -41,7 +41,7 @@ li {
 .button-link {
     display: inline-block; 
     padding: 15px 30px;
-    background-color: #b5651d; 
+    background-color: #7b4a1c; 
     color: #ffffff;
     text-decoration: none; 
     border: none;
@@ -55,6 +55,6 @@ li {
 }
 
 .button-link:hover {
-    background-color: #8b4513; 
+    background-color: #5c3413; 
     transform: scale(1.1); 
 }
