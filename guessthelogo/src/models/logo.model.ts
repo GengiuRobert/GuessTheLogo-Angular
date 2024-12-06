@@ -1,6 +1,6 @@
 export interface Logo{
-    name : String,
-    imageSrc : String,
-    category : String,
+    name : string,
+    imageSrc : string,
+    category : string,
     difficultyLevel : number 
 }

@@ -14,18 +14,18 @@ import { ScoreService } from '../../services/score.service';
 @Component({
   selector: 'app-logolevelcard',
   standalone: true,
-  imports: [FormsModule,ScoreboardComponent],
+  imports: [FormsModule, ScoreboardComponent],
   templateUrl: './logolevelcard.component.html',
   styleUrls: ['./logolevelcard.component.css']
 })
 export class LogolevelcardComponent implements OnInit {
   allLogos: Logo[] = [];
-  srcOfRandomLogo: String | undefined;
   currentLogo: Logo | null = null;
+  srcOfRandomLogo = signal<string>('');
   isCorrectAnswer = signal<boolean | null>(null);
   isAllGuessed = signal<boolean>(false);
-  currentMessage = signal('');
-  enteredLogoName = signal('');
+  currentMessage = signal<string>('');
+  enteredLogoName = signal<string>('');
 
   constructor(
     private logoService: LogoService,
@@ -48,7 +48,8 @@ export class LogolevelcardComponent implements OnInit {
       this.router.navigate(['/gamewon']);
       return;
     }
-    this.srcOfRandomLogo = this.currentLogo!.imageSrc;
+    
+    this.srcOfRandomLogo.set(this.currentLogo.imageSrc);
     this.enteredLogoName.set('');
     this.isCorrectAnswer.set(null);
   }
