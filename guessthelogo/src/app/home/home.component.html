@@ -7,11 +7,11 @@
         <li>Every correct answer brings you 1 point on the scoreboard</li>
     </ul>
 
-    <form class="settings-form">
+    <form class="settings-form" (ngSubmit)="onSubmit()">
         <h3>Game Settings</h3>
         <div class="form-group">
             <label for="category">Select Category:</label>
-            <select id="category" name="category">
+            <select id="category" name="category" [(ngModel)]="category">
                 <option value="default" selected>All Logos (Default)</option>
                 <option value="technology">Technology</option>
                 <option value="sports">Sports</option>
@@ -22,14 +22,14 @@
 
         <div class="form-group">
             <label for="difficulty">Select Difficulty:</label>
-            <select id="difficulty" name="difficulty">
-                <option value="easy" selected>Easy (Default)</option>
-                <option value="medium">Medium</option>
-                <option value="hard">Hard</option>
+            <select id="difficulty" name="difficulty" [(ngModel)]="difficulty">
+                <option value="1" selected>Easy (Default)</option>
+                <option value="2">Medium</option>
+                <option value="3">Hard</option>
             </select>
         </div>
 
-        <a href="/logolevel" class="button-link">Start Game</a>
+        <a href="/logolevel" (click)="onSubmit()" class="button-link">Start Game</a>
 
     </form>
 
