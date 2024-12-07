@@ -1,16 +1,47 @@
 # Guessthelogo
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.0.2.
+This project was created as a learning exercise to get familiar with Angular (version 19.0.2). The primary goal was to explore and practice various Angular concepts, including:
 
-## Development server
+* Working with signals for input and output communication.
+* Managing component-based architecture effectively.
+* Building a seamless flow between components using services and dependency injection.
+* Understanding and implementing Angular forms for user interaction.
 
-To start a local development server, run:
+The application is a fun, interactive game where users guess the names of logos, with dynamic settings for categories and difficulty levels.
+
+# Project structure
+
+The structure of this project is organized as follows:
+
+* Each component has its own dedicated folder.
+* Services are stored in the `services` folder.
+* Images are placed in the `public` folder.
+* Models are located in their `models` folder.
+* The array for logos is stored in the `assets` folder.
+
+I aimed to maintain a clean and modular codebase throughout the project. The majority of the logic is encapsulated within the services, allowing the components to focus primarily on their core responsibilities. This approach ensures better separation of concerns and makes the code easier to maintain and extend.
+
+# Project Setup
+
+To clone this project, run the following command in your terminal:
+
+```bash
+git clone https://github.com/GengiuRobert/GuessTheLogo-Angular
+```
+
+This will create a local copy of the project on your machine. After cloning, navigate to the project directory and install the required dependencies with:
+
+```bash
+npm install
+```
+
+Then, you can run the project with:
 
 ```bash
 ng serve
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+The application will be available at `http://localhost:4200` in your browser.
 
 ## Code scaffolding
 
