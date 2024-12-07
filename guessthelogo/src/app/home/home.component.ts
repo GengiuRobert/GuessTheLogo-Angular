@@ -1,5 +1,6 @@
 import { Component, signal } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { Router } from '@angular/router';
 
 import { HomeService } from '../../services/home.service';
 
@@ -13,12 +14,12 @@ export class HomeComponent {
   public difficulty = signal<number>(1);
   public category = signal<string>('default');
 
-  constructor(private homeService: HomeService) {
-
+  constructor(private homeService: HomeService, private router: Router) {
   }
 
   onSubmit() {
-    this.homeService.updateSettings(this.category(), this.difficulty());
+    this.homeService.updateSettings(this.category(), Number(this.difficulty()));
+    this.router.navigate(['/logolevel']);
   }
 
 }

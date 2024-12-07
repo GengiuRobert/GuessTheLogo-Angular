@@ -7,7 +7,7 @@
         <li>Every correct answer brings you 1 point on the scoreboard</li>
     </ul>
 
-    <form class="settings-form" (ngSubmit)="onSubmit()">
+    <form class="settings-form" >
         <h3>Game Settings</h3>
         <div class="form-group">
             <label for="category">Select Category:</label>
@@ -29,7 +29,7 @@
             </select>
         </div>
 
-        <a href="/logolevel" (click)="onSubmit()" class="button-link">Start Game</a>
+        <button  (click)="onSubmit()" class="button-link">Start Game</button>
 
     </form>
 

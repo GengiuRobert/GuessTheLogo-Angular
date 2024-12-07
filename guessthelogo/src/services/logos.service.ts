@@ -11,14 +11,37 @@ export class LogoService {
         return this.logosImported;
     }
 
+    setAllLogos(newLogos: Logo[]): void {
+        this.logosImported = newLogos;
+    }
+
+    getFilteredLogos(category: string, levelOfDifficulty: number): Logo[] {
+
+        console.log("logoservice", category);
+        console.log("logoservice", levelOfDifficulty);
+
+        let filteredLogos = this.logosImported;
+
+        filteredLogos = filteredLogos.filter((logo) => {
+            const matchesDifficulty = logo.difficultyLevel === levelOfDifficulty;
+            const matchesCategory = category === "default" || logo.category === category;
+
+            return (matchesCategory && matchesDifficulty);
+        });
+        console.log("logoservice", filteredLogos);
+
+        return filteredLogos;
+    }
+
     getRandomLogo(): Logo | null {
 
         if (this.logosImported.length === 0) {
             return null;
+        } else {
+            let generateRandomIndex = Math.floor(Math.random() * this.logosImported.length);
+            return this.logosImported[generateRandomIndex];
         }
 
-        let generateRandomIndex = Math.floor(Math.random() * this.logosImported.length);
-        return this.logosImported[generateRandomIndex];
     }
 
     removeGuessedLogo(currentLogo: Logo) {

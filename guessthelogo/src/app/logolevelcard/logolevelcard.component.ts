@@ -5,10 +5,12 @@ import { Router } from '@angular/router';
 import { ScoreboardComponent } from '../scoreboard/scoreboard.component';
 
 import type { Logo } from '../../models/logo.model';
+import type { Setting } from '../../models/setting.model';
 
 import { LogoService } from '../../services/logos.service';
 import { AnswerService } from '../../services/answer.service';
 import { ScoreService } from '../../services/score.service';
+import { HomeService } from '../../services/home.service';
 
 
 @Component({
@@ -19,7 +21,6 @@ import { ScoreService } from '../../services/score.service';
   styleUrls: ['./logolevelcard.component.css']
 })
 export class LogolevelcardComponent implements OnInit {
-  allLogos: Logo[] = [];
   currentLogo: Logo | null = null;
   srcOfRandomLogo = signal<string>('');
   isCorrectAnswer = signal<boolean | null>(null);
@@ -31,16 +32,20 @@ export class LogolevelcardComponent implements OnInit {
     private logoService: LogoService,
     private checkAnswearService: AnswerService,
     private scoreService: ScoreService,
+    private homeService: HomeService,
     private router: Router
   ) { }
 
   ngOnInit(): void {
-    this.allLogos = this.logoService.getAllLogos();
     this.loadNewLogo();
   }
 
   loadNewLogo(): void {
 
+    const selectedSettings: Setting = this.homeService.getSettings();
+    const filteredLogos: Logo[] = this.logoService.getFilteredLogos(selectedSettings.category, selectedSettings.levelOfDifficulty);
+    console.log(filteredLogos);
+    this.logoService.setAllLogos(filteredLogos);
     this.currentLogo = this.logoService.getRandomLogo();
 
     if (this.currentLogo === null) {
@@ -48,7 +53,7 @@ export class LogolevelcardComponent implements OnInit {
       this.router.navigate(['/gamewon']);
       return;
     }
-    
+
     this.srcOfRandomLogo.set(this.currentLogo.imageSrc);
     this.enteredLogoName.set('');
     this.isCorrectAnswer.set(null);
