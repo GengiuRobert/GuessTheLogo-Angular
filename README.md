@@ -9,6 +9,11 @@ This project was created as a learning exercise to get familiar with Angular (ve
 
 The application is a fun, interactive game where users guess the names of logos, with dynamic settings for categories and difficulty levels.
 
+# Quick note for mobile users
+
+Remember to use the << ' >> character from the mobile phones keyboard when trying to write something like << McDonald's >> 
+The standard << ' >> character from mobile phones keyboard is << ‘ >>, you need to change it to the pc keyboard one.
+
 # Project deployment link
 
 You can try on your own my project with this link:
