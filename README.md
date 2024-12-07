@@ -36,7 +36,7 @@ npm install
 ```
 
 Then, you can run the project with:
-
+git 
 ```bash
 ng serve
 ```
