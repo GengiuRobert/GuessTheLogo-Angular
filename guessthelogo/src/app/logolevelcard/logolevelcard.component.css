@@ -18,8 +18,7 @@
   
 .logo-image {
     max-width: 100%;
-     /* Ensure image maintains aspect ratio */
-    max-height: 200px; /* Set a max height to avoid images being too tall */
+    max-height: 200px; 
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
 }
@@ -105,7 +104,6 @@
     }
 }
 
-/* Responsive Styles */
 @media (max-width: 768px) {
     .card {
         max-width: 90%;
@@ -113,7 +111,7 @@
     }
 
     .logo-image {
-        max-height: 150px; /* Reduce max height for smaller screens */
+        max-height: 150px; 
     }
 
     .check-button {
