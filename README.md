@@ -9,6 +9,11 @@ This project was created as a learning exercise to get familiar with Angular (ve
 
 The application is a fun, interactive game where users guess the names of logos, with dynamic settings for categories and difficulty levels.
 
+# Project deployment link
+
+You can try on your own my project with this link:
+ `https://gengiurobert.github.io/GuessTheLogo-Angular/home`
+
 # Project structure
 
 The structure of this project is organized as follows:
