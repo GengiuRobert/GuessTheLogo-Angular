@@ -18,7 +18,7 @@
   
 .logo-image {
     max-width: 100%;
-    height: auto; /* Ensure image maintains aspect ratio */
+     /* Ensure image maintains aspect ratio */
     max-height: 200px; /* Set a max height to avoid images being too tall */
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
