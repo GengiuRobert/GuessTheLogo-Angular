@@ -44,7 +44,6 @@ export class LogolevelcardComponent implements OnInit {
 
     const selectedSettings: Setting = this.homeService.getSettings();
     const filteredLogos: Logo[] = this.logoService.getFilteredLogos(selectedSettings.category, selectedSettings.levelOfDifficulty);
-    console.log(filteredLogos);
     this.logoService.setAllLogos(filteredLogos);
     this.currentLogo = this.logoService.getRandomLogo();
 

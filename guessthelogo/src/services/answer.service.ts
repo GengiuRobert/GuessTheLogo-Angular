@@ -8,7 +8,7 @@ export class AnswerService {
     importedLogos = logos;
 
     onInputCheckAnswer(userInputLogo: string, currentLogo: Logo ): boolean {
-        let processedLogoName = userInputLogo.toLowerCase().trim();
+        let processedLogoName = userInputLogo.toLowerCase().trim().replaceAll(' ', '');
         let currentLogoName = currentLogo.name.toLowerCase();
         if (processedLogoName === currentLogoName) {
             return true;

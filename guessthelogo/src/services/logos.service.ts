@@ -17,9 +17,6 @@ export class LogoService {
 
     getFilteredLogos(category: string, levelOfDifficulty: number): Logo[] {
 
-        console.log("logoservice", category);
-        console.log("logoservice", levelOfDifficulty);
-
         let filteredLogos = this.logosImported;
 
         filteredLogos = filteredLogos.filter((logo) => {
@@ -28,7 +25,6 @@ export class LogoService {
 
             return (matchesCategory && matchesDifficulty);
         });
-        console.log("logoservice", filteredLogos);
 
         return filteredLogos;
     }
