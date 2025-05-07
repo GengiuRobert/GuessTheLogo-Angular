@@ -1,18 +1,18 @@
 {
   "$schema": "./node_modules/@angular/service-worker/config/schema.json",
-  "index": "/index.html",
+  "index": "/GuessTheLogo-Angular/index.html",
   "assetGroups": [
     {
       "name": "app",
       "installMode": "prefetch",
       "resources": {
         "files": [
-          "/favicon.ico",
-          "/index.csr.html",
-          "/index.html",
-          "/manifest.webmanifest",
-          "/*.css",
-          "/*.js"
+          "/GuessTheLogo-Angular/favicon.ico",
+          "/GuessTheLogo-Angular/index.csr.html",
+          "/GuessTheLogo-Angular/index.html",
+          "/GuessTheLogo-Angular/manifest.webmanifest",
+          "/GuessTheLogo-Angular/*.css",
+          "/GuessTheLogo-Angular/*.js"
         ]
       }
     },
@@ -22,7 +22,7 @@
       "updateMode": "prefetch",
       "resources": {
         "files": [
-          "/**/*.(svg|cur|jpg|jpeg|png|apng|webp|avif|gif|otf|ttf|woff|woff2)"
+          "/GuessTheLogo-Angular/**/*.(svg|cur|jpg|jpeg|png|apng|webp|avif|gif|otf|ttf|woff|woff2)"
         ]
       }
     }
