@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -9,5 +10,10 @@ import { Component } from '@angular/core';
 })
 export class GamewonComponent {
 
+  constructor(private router:Router){}
+
+  goBackHome(){
+    this.router.navigate(['/home']);
+  }
 
 }
