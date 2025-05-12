@@ -1,4 +1,4 @@
-<!doctype html>
+export default `<!doctype html>
 <html lang="en" data-beasties-container="">
 
 <head>
@@ -20,4 +20,4 @@
   <noscript>Please enable JavaScript to continue using this application.</noscript>
 <script src="polyfills-FFHMD2TL.js" type="module"></script><script src="main-LRYTNWHY.js" type="module"></script></body>
 
-</html>
+</html>`;

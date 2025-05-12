@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="en" data-beasties-container><head>
+export default `<!DOCTYPE html><html lang="en" data-beasties-container><head>
   <meta charset="utf-8">
   <title>Guessthelogo</title>
   <base href="/GuessTheLogo-Angular/">
@@ -19,4 +19,4 @@
   <noscript>Please enable JavaScript to continue using this application.</noscript>
 <script src="polyfills-FFHMD2TL.js" type="module"></script><script src="main-LRYTNWHY.js" type="module"></script>
 
-<script id="ng-state" type="application/json">{"__nghData__":[{},{"c":{"0":[{"i":"c1148037612","r":1}]}}]}</script></body></html>
+<script id="ng-state" type="application/json">{"__nghData__":[{},{"c":{"0":[{"i":"c1148037612","r":1}]}}]}</script></body></html>`;

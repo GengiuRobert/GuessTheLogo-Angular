@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="en" data-beasties-container><head>
+export default `<!DOCTYPE html><html lang="en" data-beasties-container><head>
   <meta charset="utf-8">
   <title>Guessthelogo</title>
   <base href="/GuessTheLogo-Angular/">
@@ -19,4 +19,4 @@
   <noscript>Please enable JavaScript to continue using this application.</noscript>
 <script src="polyfills-FFHMD2TL.js" type="module"></script><script src="main-LRYTNWHY.js" type="module"></script>
 
-<script id="ng-state" type="application/json">{"__nghData__":[{},{"t":{"2":"t0","7":"t1"},"c":{"2":[{"i":"t0","r":1}],"7":[{"i":"t1","r":4,"t":{"0":"t2","1":"t3","2":"t4"},"c":{"0":[],"1":[],"2":[{"i":"t4","r":1}]}}]}},{"c":{"0":[{"i":"c2710869344","r":1}]}}]}</script></body></html>
+<script id="ng-state" type="application/json">{"__nghData__":[{},{"t":{"2":"t0","7":"t1"},"c":{"2":[{"i":"t0","r":1}],"7":[{"i":"t1","r":4,"t":{"0":"t2","1":"t3","2":"t4"},"c":{"0":[],"1":[],"2":[{"i":"t4","r":1}]}}]}},{"c":{"0":[{"i":"c2710869344","r":1}]}}]}</script></body></html>`;
