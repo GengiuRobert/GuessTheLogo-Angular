@@ -1,8 +1,0 @@
-{
-  "routes": {
-    "/GuessTheLogo-Angular": {},
-    "/GuessTheLogo-Angular/gamewon": {},
-    "/GuessTheLogo-Angular/home": {},
-    "/GuessTheLogo-Angular/logolevel": {}
-  }
-}
