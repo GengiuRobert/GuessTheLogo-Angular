@@ -1,4 +1,9 @@
 <div class="home-container">
+    <div class="connection-status" [class.online]="isOnline()" [class.offline]="!isOnline()">
+        <span class="status-dot"></span>
+        {{ isOnline() ? 'Online' : 'Offline' }}
+    </div>
+
     <h1>Welcome to Guess the Logo!</h1>
     <h2>Short Rules</h2>
     <ul>

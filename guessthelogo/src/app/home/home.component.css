@@ -95,3 +95,41 @@ li {
     border-color: #8b4513;
     outline: none;
 }
+
+.connection-status {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    padding: 8px 16px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.status-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+}
+
+.online {
+    background-color: #e8f5e9;
+    color: #2e7d32;
+}
+
+.online .status-dot {
+    background-color: #2e7d32;
+}
+
+.offline {
+    background-color: #ffebee;
+    color: #c62828;
+}
+
+.offline .status-dot {
+    background-color: #c62828;
+}
