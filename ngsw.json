@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1746620779988,
+  "timestamp": 1747041827910,
   "index": "https://gengiurobert.github.io/GuessTheLogo-Angular/index.csr.html",
   "assetGroups": [
     {
@@ -15,7 +15,7 @@
     },
     {
       "name": "assets",
-      "installMode": "lazy",
+      "installMode": "prefetch",
       "updateMode": "prefetch",
       "cacheQueryOptions": {
         "ignoreVary": true
